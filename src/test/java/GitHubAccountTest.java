@@ -54,8 +54,22 @@ public class GitHubAccountTest {
         gitHubAccount1.addRepoToGitAccount("house_plant_app", account1repository1);
         assertEquals(2, gitHubAccount1.countNumberOfReposInAccount());
         }
-//        @Test
-//        public void canGetRepositoryInRepositoriesByName() {
-//        assertEquals(account1repository1 account1repository2, gitHubAccount1.getRepositories());
-//        }
+
+        @Test
+        public void canGetAccountType() {
+        assertEquals(AccountType.FREE, gitHubAccount1.getAccountType());
+        }
+
+        @Test
+        public void canUpgradeAccountFromFreeToPro() {
+        gitHubAccount1.upgradeAccountToPro();
+        assertEquals(AccountType.PRO, gitHubAccount1.getAccountType());
+        }
+
+        @Test
+        public void canDownGradeAccountFromProToFree() {
+        gitHubAccount1.upgradeAccountToPro();
+        gitHubAccount1.downgradeAccountToFree();
+        assertEquals(AccountType.FREE, gitHubAccount1.getAccountType());
+        }
     }

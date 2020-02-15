@@ -12,7 +12,7 @@ public GitHubAccount(String username, String name, AccountType accountType) {
     this.username = username;
     this.name = name;
     this.repositories = new HashMap<String, Repository>();
-    this.accountType = accountType;
+    this.accountType = accountType.FREE;
 }
 
 
@@ -34,5 +34,17 @@ public GitHubAccount(String username, String name, AccountType accountType) {
 
     public Object getRepositories() {
     return this.repositories;
+    }
+
+    public AccountType getAccountType() {
+    return this.accountType;
+    }
+
+    public void upgradeAccountToPro() {
+    this.accountType = accountType.PRO;
+    }
+
+    public void downgradeAccountToFree() {
+    this.accountType = accountType.FREE;
     }
 }
