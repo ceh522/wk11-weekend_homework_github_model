@@ -31,10 +31,8 @@ public class RepositoryTest {
     }
 
     @Test
-    public void canMakeSureItemsInCommitsArrayAreCommits() {
+    public void getCommitFromCommitsArrayByIndex() {
         assertEquals(commit1, repository1.getCommitFromCommitsArrayByIndex(commit1));
     }
-
-
 
 }

@@ -16,7 +16,7 @@ public class Repository {
         return this.commits.size();
     }
 
-    public Commit getCommitFromCommitsArrayByIndex(Commit commit1) {
+    public Commit getCommitFromCommitsArrayByIndex(Commit commit) {
         return this.commits.get(0);
     }
 }
